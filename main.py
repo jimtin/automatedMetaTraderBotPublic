@@ -1,4 +1,10 @@
 # Initial Main File Setup
+import project_settings.importSettings as startup
+import project_settings.startupMT5 as startMT5
+
+
+# Project Variables
+settingsPath = r"C:\Users\james\PycharmProjects\automatedMetaTraderBotPublic\settings.json"
 
 
 def print_welcome():
@@ -9,3 +15,5 @@ def print_welcome():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_welcome()
+    projectDetails = settings_info = startup.getProjectSettings(settingsPath)
+    startMT5.startMT5(projectDetails)
